@@ -37,4 +37,40 @@ type salesforce.Contact {
     sorted = false
     restricted = false
   }
+  salesforce.Picklist ContactType__c {
+    apiName = "Contact.ContactType__c"
+    label = "Contact Type"
+    valueSet = {
+      values = {
+        Customer = {
+          fullName = "Customer"
+          default = false
+          label = "Customer"
+        }
+        Partner = {
+          fullName = "Partner"
+          default = false
+          label = "Partner"
+        }
+        Vendor = {
+          fullName = "Vendor"
+          default = false
+          label = "Vendor"
+        }
+        Other = {
+          fullName = "Other"
+          default = false
+          label = "Other"
+        }
+      }
+      order = [
+        salesforce.Contact.field.ContactType__c.valueSet.values.Customer,
+        salesforce.Contact.field.ContactType__c.valueSet.values.Partner,
+        salesforce.Contact.field.ContactType__c.valueSet.values.Vendor,
+        salesforce.Contact.field.ContactType__c.valueSet.values.Other,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
 }
