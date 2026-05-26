@@ -145,4 +145,34 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
+  salesforce.Picklist Region__c {
+    apiName = "Account.Region__c"
+    label = "Region"
+    valueSet = {
+      values = {
+        NA = {
+          fullName = "NA"
+          default = false
+          label = "NA"
+        }
+        EU = {
+          fullName = "EU"
+          default = false
+          label = "EU"
+        }
+        APAC = {
+          fullName = "APAC"
+          default = false
+          label = "APAC"
+        }
+      }
+      order = [
+        salesforce.Account.field.Region__c.valueSet.values.NA,
+        salesforce.Account.field.Region__c.valueSet.values.EU,
+        salesforce.Account.field.Region__c.valueSet.values.APAC,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
 }
