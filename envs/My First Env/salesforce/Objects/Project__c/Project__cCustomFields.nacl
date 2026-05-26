@@ -1,0 +1,61 @@
+type salesforce.Project__c {
+  salesforce.Picklist Status__c {
+    apiName = "Project__c.Status__c"
+    label = "Status"
+    valueSet = {
+      values = {
+        Planning = {
+          fullName = "Planning"
+          default = true
+          label = "Planning"
+        }
+        Active = {
+          fullName = "Active"
+          default = false
+          label = "Active"
+        }
+        OnHold = {
+          fullName = "On Hold"
+          default = false
+          label = "On Hold"
+        }
+        Completed = {
+          fullName = "Completed"
+          default = false
+          label = "Completed"
+        }
+        Cancelled = {
+          fullName = "Cancelled"
+          default = false
+          label = "Cancelled"
+        }
+      }
+      order = [
+        salesforce.Project__c.field.Status__c.valueSet.values.Planning,
+        salesforce.Project__c.field.Status__c.valueSet.values.Active,
+        salesforce.Project__c.field.Status__c.valueSet.values.OnHold,
+        salesforce.Project__c.field.Status__c.valueSet.values.Completed,
+        salesforce.Project__c.field.Status__c.valueSet.values.Cancelled,
+      ]
+    }
+    sorted = false
+    restricted = true
+  }
+  salesforce.Date StartDate__c {
+    apiName = "Project__c.StartDate__c"
+    label = "Start Date"
+  }
+  salesforce.Date EndDate__c {
+    apiName = "Project__c.EndDate__c"
+    label = "End Date"
+  }
+  salesforce.Lookup Account__c {
+    apiName = "Project__c.Account__c"
+    label = "Account"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    relationshipName = "Account"
+    relationshipLabel = "Projects"
+  }
+}
