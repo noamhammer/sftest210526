@@ -31,7 +31,7 @@ type salesforce.Account {
   }
   salesforce.Picklist CustomerPriority__c {
     apiName = "Account.CustomerPriority__c"
-    label = "Customer Priority"
+    label = "Priority"
     valueSet = {
       values = {
         High = {
