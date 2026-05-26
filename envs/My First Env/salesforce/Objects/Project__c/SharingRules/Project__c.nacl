@@ -1,0 +1,7 @@
+salesforce.SharingRules Project__c {
+  fullName = "Project__c"
+  _parent = [
+    salesforce.Project__c,
+  ]
+  _alias = "Project__c"
+}

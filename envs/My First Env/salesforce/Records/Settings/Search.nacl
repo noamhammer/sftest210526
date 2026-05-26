@@ -373,6 +373,12 @@ salesforce.SearchSettings {
       {
         enhancedLookupEnabled = false
         lookupAutoCompleteEnabled = false
+        name = salesforce.Project__c
+        resultsPerPageCount = 0
+      },
+      {
+        enhancedLookupEnabled = false
+        lookupAutoCompleteEnabled = false
         name = salesforce.Promotion
         resultsPerPageCount = 25
       },

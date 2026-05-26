@@ -2,6 +2,7 @@ type salesforce.Project__c {
   salesforce.Picklist Status__c {
     apiName = "Project__c.Status__c"
     label = "Status"
+    trackTrending = false
     valueSet = {
       values = {
         Planning = {
@@ -14,11 +15,6 @@ type salesforce.Project__c {
           default = false
           label = "Active"
         }
-        OnHold = {
-          fullName = "On Hold"
-          default = false
-          label = "On Hold"
-        }
         Completed = {
           fullName = "Completed"
           default = false
@@ -29,11 +25,16 @@ type salesforce.Project__c {
           default = false
           label = "Cancelled"
         }
+        On_Hold@s = {
+          fullName = "On Hold"
+          default = false
+          label = "On Hold"
+        }
       }
       order = [
         salesforce.Project__c.field.Status__c.valueSet.values.Planning,
         salesforce.Project__c.field.Status__c.valueSet.values.Active,
-        salesforce.Project__c.field.Status__c.valueSet.values.OnHold,
+        salesforce.Project__c.field.Status__c.valueSet.values.On_Hold@s,
         salesforce.Project__c.field.Status__c.valueSet.values.Completed,
         salesforce.Project__c.field.Status__c.valueSet.values.Cancelled,
       ]
@@ -44,18 +45,22 @@ type salesforce.Project__c {
   salesforce.Date StartDate__c {
     apiName = "Project__c.StartDate__c"
     label = "Start Date"
+    trackTrending = false
   }
   salesforce.Date EndDate__c {
     apiName = "Project__c.EndDate__c"
     label = "End Date"
+    trackTrending = false
   }
   salesforce.Lookup Account__c {
     apiName = "Project__c.Account__c"
+    deleteConstraint = "SetNull"
     label = "Account"
     referenceTo = [
       salesforce.Account,
     ]
     relationshipName = "Account"
     relationshipLabel = "Projects"
+    trackTrending = false
   }
 }
