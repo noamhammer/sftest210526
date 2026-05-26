@@ -14,11 +14,6 @@ type salesforce.Account {
           default = false
           label = "Paused"
         }
-        Yes = {
-          fullName = "Yes"
-          default = false
-          label = "Yes"
-        }
       }
       order = [
         salesforce.Account.field.Active__c.valueSet.values.No,
