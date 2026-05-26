@@ -9,11 +9,6 @@ type salesforce.Account {
           default = false
           label = "No"
         }
-        Paused = {
-          fullName = "Paused"
-          default = false
-          label = "Paused"
-        }
         Yes = {
           fullName = "Yes"
           default = false
@@ -22,7 +17,6 @@ type salesforce.Account {
       }
       order = [
         salesforce.Account.field.Active__c.valueSet.values.No,
-        salesforce.Account.field.Active__c.valueSet.values.Paused,
         salesforce.Account.field.Active__c.valueSet.values.Yes,
       ]
     }
@@ -62,7 +56,7 @@ type salesforce.Account {
   salesforce.Number NumberofLocations__c {
     apiName = "Account.NumberofLocations__c"
     externalId = false
-    label = "Number of Office Locations"
+    label = "Number of Locations"
     precision = 3
     scale = 0
     unique = false
@@ -145,34 +139,10 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
-  salesforce.Picklist Region__c {
-    apiName = "Account.Region__c"
-    label = "Region"
-    valueSet = {
-      values = {
-        NA = {
-          fullName = "NA"
-          default = false
-          label = "NA"
-        }
-        EU = {
-          fullName = "EU"
-          default = false
-          label = "EU"
-        }
-        APAC = {
-          fullName = "APAC"
-          default = false
-          label = "APAC"
-        }
-      }
-      order = [
-        salesforce.Account.field.Region__c.valueSet.values.NA,
-        salesforce.Account.field.Region__c.valueSet.values.EU,
-        salesforce.Account.field.Region__c.valueSet.values.APAC,
-      ]
-    }
-    sorted = false
-    restricted = false
+  salesforce.LongTextArea Notes__c {
+    apiName = "Account.Notes__c"
+    label = "Notes"
+    length = 32768
+    visibleLines = 5
   }
 }
