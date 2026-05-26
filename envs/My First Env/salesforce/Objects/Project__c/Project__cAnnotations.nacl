@@ -1,0 +1,17 @@
+type salesforce.Project__c {
+  apiName = "Project__c"
+  metadataType = "CustomObject"
+  label = "Project"
+  pluralLabel = "Projects"
+  deploymentStatus = "Deployed"
+  sharingModel = "ReadWrite"
+  enableActivities = true
+  enableHistory = false
+  enableReports = true
+  enableSearch = true
+  nameField = {
+    type = "Text"
+    label = "Project Name"
+  }
+  _alias = "Project"
+}
