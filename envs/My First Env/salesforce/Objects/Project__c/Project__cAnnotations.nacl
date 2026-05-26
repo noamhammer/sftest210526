@@ -1,0 +1,41 @@
+type salesforce.Project__c {
+  annotations {
+    serviceid apiName {
+    }
+    serviceid metadataType {
+    }
+    string label {
+    }
+    string pluralLabel {
+    }
+    string deploymentStatus {
+    }
+    string sharingModel {
+    }
+    boolean enableActivities {
+    }
+    boolean enableHistory {
+    }
+    boolean enableReports {
+    }
+    boolean enableSearch {
+    }
+    salesforce.CustomField nameField {
+    }
+  }
+  apiName = "Project__c"
+  metadataType = "CustomObject"
+  label = "Project"
+  pluralLabel = "Projects"
+  deploymentStatus = "Deployed"
+  sharingModel = "ReadWrite"
+  enableActivities = true
+  enableHistory = false
+  enableReports = true
+  enableSearch = true
+  nameField = {
+    type = "Text"
+    label = "Project Name"
+  }
+  _alias = "Project"
+}
