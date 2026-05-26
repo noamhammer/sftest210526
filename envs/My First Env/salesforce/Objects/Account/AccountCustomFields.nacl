@@ -175,4 +175,10 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
+  salesforce.LongTextArea Notes__c {
+    apiName = "Account.Notes__c"
+    label = "Notes"
+    length = 32768
+    visibleLines = 5
+  }
 }
