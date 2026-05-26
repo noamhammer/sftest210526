@@ -9,6 +9,11 @@ type salesforce.Account {
           default = false
           label = "No"
         }
+        Paused = {
+          fullName = "Paused"
+          default = false
+          label = "Paused"
+        }
         Yes = {
           fullName = "Yes"
           default = false
@@ -17,6 +22,7 @@ type salesforce.Account {
       }
       order = [
         salesforce.Account.field.Active__c.valueSet.values.No,
+        salesforce.Account.field.Active__c.valueSet.values.Paused,
         salesforce.Account.field.Active__c.valueSet.values.Yes,
       ]
     }
