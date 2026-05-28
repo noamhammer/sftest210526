@@ -1,0 +1,15 @@
+salesforce.EmailTemplate reutnoam_dasdas@d {
+  available = true
+  encodingKey = "UTF-8"
+  name = "dasdas"
+  style = "none"
+  subject = "hghfhgf"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "reutnoam/dasdas"
+  content = file("salesforce/Records/EmailTemplate/reutnoam/dasdas/dasdas.email")
+  _parent = [
+    salesforce.EmailFolder.instance.reutnoam,
+  ]
+  _alias = "reutnoam/dasdas"
+}

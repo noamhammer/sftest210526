@@ -1,0 +1,15 @@
+salesforce.ExtlClntAppOauthConfigurablePolicies Salto_CLI_oauthPlcy {
+  externalClientApplication = salesforce.ExternalClientApplication.instance.Salto_CLI
+  ipRelaxationPolicyType = "Enforce"
+  isClientCredentialsFlowEnabled = false
+  isGuestCodeCredFlowEnabled = false
+  isTokenExchangeFlowEnabled = false
+  label = "Salto_CLI_oauthPlcy"
+  permittedUsersPolicyType = "AllSelfAuthorized"
+  refreshTokenPolicyType = "SpecificLifetime"
+  refreshTokenValidityPeriod = 365
+  refreshTokenValidityUnit = "Days"
+  requiredSessionLevel = "STANDARD"
+  fullName = "Salto_CLI_oauthPlcy"
+  _alias = "Salto_CLI_oauthPlcy"
+}

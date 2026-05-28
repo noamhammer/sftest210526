@@ -1,0 +1,7 @@
+salesforce.EmailFolder reutnoam {
+  accessType = "Public"
+  name = "reutnoam"
+  publicFolderAccess = "ReadWrite"
+  fullName = "reutnoam"
+  _alias = "reutnoam"
+}

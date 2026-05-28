@@ -1,0 +1,9 @@
+salesforce.ExtlClntAppOauthSettings Salto_CLI_oauth {
+  commaSeparatedOauthScopes = "Full, RefreshToken"
+  externalClientApplication = salesforce.ExternalClientApplication.instance.Salto_CLI
+  isFirstPartyAppEnabled = false
+  label = "Salto_CLI_oauth"
+  oauthLink = "00DgK00000PV75F:888gK000000bzir"
+  fullName = "Salto_CLI_oauth"
+  _alias = "Salto_CLI_oauth"
+}

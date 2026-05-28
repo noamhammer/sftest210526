@@ -1,0 +1,22 @@
+salesforce.ExtlClntAppGlobalOauthSettings Salto_CLI_glbloauth {
+  callbackUrl = "http://localhost:8080"
+  consumerKey = "3MVG9rZjd7MXFdLgyEyCaDTb3BRKEhAlPyMUkyjr4.VJrtxQkEU2WDhwBp6hy2NRLfUbvRKkoLT8e6JQAUrYT"
+  externalClientApplication = salesforce.ExternalClientApplication.instance.Salto_CLI
+  isClientCredentialsFlowEnabled = false
+  isCodeCredFlowEnabled = false
+  isCodeCredPostOnly = false
+  isConsumerSecretOptional = false
+  isDeviceFlowEnabled = false
+  isIntrospectAllTokens = false
+  isNamedUserJwtEnabled = false
+  isPkceRequired = false
+  isRefreshTokenRotationEnabled = false
+  isSecretRequiredForRefreshToken = true
+  isSecretRequiredForTokenExchange = true
+  isTokenExchangeEnabled = false
+  label = "Salto_CLI_glbloauth"
+  shouldRotateConsumerKey = false
+  shouldRotateConsumerSecret = false
+  fullName = "Salto_CLI_glbloauth"
+  _alias = "Salto_CLI_glbloauth"
+}

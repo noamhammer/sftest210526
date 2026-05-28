@@ -1,0 +1,9 @@
+salesforce.ExternalClientApplication Salto_CLI {
+  contactEmail = "noam.hammer@salto.io"
+  distributionState = "Local"
+  isProtected = false
+  label = "Salto CLI"
+  orgScopedExternalApp = "00DgK00000PV75F:Salto_CLI"
+  fullName = "Salto_CLI"
+  _alias = "Salto CLI"
+}

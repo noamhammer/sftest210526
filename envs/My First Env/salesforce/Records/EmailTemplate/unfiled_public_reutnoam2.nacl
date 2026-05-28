@@ -1,0 +1,12 @@
+salesforce.EmailTemplate unfiled_public_reutnoam2@zcd {
+  available = true
+  encodingKey = "UTF-8"
+  name = "reutnoam2"
+  style = "none"
+  subject = "test2"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/reutnoam2"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/reutnoam2/reutnoam2.email")
+  _alias = "unfiled$public/reutnoam2"
+}

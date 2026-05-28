@@ -1,0 +1,12 @@
+salesforce.EmailTemplate unfiled_public_fsdfTESTT@zcd {
+  available = true
+  encodingKey = "UTF-8"
+  name = "fsdfTESTT"
+  style = "none"
+  subject = "fsdf"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/fsdfTESTT"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/fsdfTESTT/fsdfTESTT.email")
+  _alias = "unfiled$public/fsdfTESTT"
+}

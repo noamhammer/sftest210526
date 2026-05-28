@@ -1,0 +1,9 @@
+salesforce.ExtlClntAppConfigurablePolicies Salto_CLI_plcy {
+  externalClientApplication = salesforce.ExternalClientApplication.instance.Salto_CLI
+  isEnabled = true
+  isOauthPluginEnabled = true
+  label = "Salto_CLI_plcy"
+  startPage = "None"
+  fullName = "Salto_CLI_plcy"
+  _alias = "Salto_CLI_plcy"
+}

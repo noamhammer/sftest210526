@@ -124,6 +124,10 @@ salesforce.AppMenu AppSwitcher {
       name = salesforce.CustomApplication.instance.standard__FlowsApp
       type = "CustomApplication"
     },
+    {
+      name = salesforce.ExternalClientApplication.instance.Salto_CLI
+      type = "ExternalClientApplication"
+    },
   ]
   fullName = "AppSwitcher"
   _alias = "AppSwitcher"
