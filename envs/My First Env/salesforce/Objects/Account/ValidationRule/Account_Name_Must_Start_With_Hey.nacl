@@ -1,0 +1,11 @@
+salesforce.ValidationRule Account_Name_Must_Start_With_Hey {
+  active = true
+  errorConditionFormula = "NOT(BEGINS(UPPER(Name), \"HEY\"))"
+  errorDisplayField = "Name"
+  errorMessage = "Account Name must start with \"Hey\"."
+  fullName = "Account.Name_Must_Start_With_Hey"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Account.Name_Must_Start_With_Hey"
+}
