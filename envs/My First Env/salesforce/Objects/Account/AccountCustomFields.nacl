@@ -34,26 +34,8 @@ type salesforce.Account {
     label = "Priority"
     valueSet = {
       values = {
-        High = {
-          fullName = "High"
-          default = false
-          label = "High"
-        }
-        Low = {
-          fullName = "Low"
-          default = false
-          label = "Low"
-        }
-        Medium = {
-          fullName = "Medium"
-          default = false
-          label = "Medium"
-        }
       }
       order = [
-        salesforce.Account.field.CustomerPriority__c.valueSet.values.High,
-        salesforce.Account.field.CustomerPriority__c.valueSet.values.Low,
-        salesforce.Account.field.CustomerPriority__c.valueSet.values.Medium,
       ]
     }
     sorted = false
