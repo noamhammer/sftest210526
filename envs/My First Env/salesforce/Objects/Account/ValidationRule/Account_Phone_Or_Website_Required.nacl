@@ -1,0 +1,10 @@
+salesforce.ValidationRule Account_Phone_Or_Website_Required@vuuu {
+  active = true
+  errorConditionFormula = "AND(ISBLANK(Phone), ISBLANK(Website))"
+  errorMessage = "Provide either a phone number or a website."
+  fullName = "Account.Phone_Or_Website_Required"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Account.Phone_Or_Website_Required"
+}
