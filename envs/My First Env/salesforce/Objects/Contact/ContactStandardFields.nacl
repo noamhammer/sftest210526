@@ -34,7 +34,7 @@ type salesforce.Contact {
   }
   salesforce.Text Department {
     apiName = "Contact.Department"
-    label = "Department"
+    label = "Team"
     length = 80
     unique = false
     caseSensitive = false
