@@ -1,0 +1,11 @@
+salesforce.Role NoamTest {
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  description = "NoamTest"
+  mayForecastManagerShare = false
+  name = "NoamTest"
+  opportunityAccessLevel = "Edit"
+  parentRole = salesforce.Role.instance.SVPSalesMarketing
+  fullName = "NoamTest"
+  _alias = "NoamTest"
+}
