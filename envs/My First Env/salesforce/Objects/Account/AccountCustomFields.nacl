@@ -29,6 +29,30 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
+  salesforce.Picklist AccountLocale__c {
+    apiName = "Account.AccountLocale__c"
+    label = "Account Locale"
+    valueSet = {
+      values = {
+        Domestic = {
+          fullName = "Domestic"
+          default = false
+          label = "Domestic"
+        }
+        International = {
+          fullName = "International"
+          default = false
+          label = "International"
+        }
+      }
+      order = [
+        salesforce.Account.field.AccountLocale__c.valueSet.values.Domestic,
+        salesforce.Account.field.AccountLocale__c.valueSet.values.International,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
   salesforce.Picklist CustomerPriority__c {
     apiName = "Account.CustomerPriority__c"
     label = "Priority"
