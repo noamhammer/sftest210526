@@ -181,4 +181,34 @@ type salesforce.Account {
     length = 32768
     visibleLines = 5
   }
+  salesforce.Picklist Boom__c {
+    apiName = "Account.Boom__c"
+    label = "Boom"
+    valueSet = {
+      values = {
+        Ahhh = {
+          fullName = "Ahhh"
+          default = false
+          label = "Ahhh"
+        }
+        Hiiii = {
+          fullName = "Hiiii"
+          default = false
+          label = "Hiiii"
+        }
+        Looop = {
+          fullName = "Looop"
+          default = false
+          label = "Looop!"
+        }
+      }
+      order = [
+        salesforce.Account.field.Boom__c.valueSet.values.Ahhh,
+        salesforce.Account.field.Boom__c.valueSet.values.Hiiii,
+        salesforce.Account.field.Boom__c.valueSet.values.Looop,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
 }
