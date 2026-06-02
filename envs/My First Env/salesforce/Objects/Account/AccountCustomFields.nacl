@@ -59,6 +59,30 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
+  salesforce.Picklist Elad__c {
+    apiName = "Account.Elad__c"
+    label = "Elad"
+    valueSet = {
+      values = {
+        Yes = {
+          fullName = "Yes"
+          default = false
+          label = "Yes"
+        }
+        No = {
+          fullName = "No"
+          default = false
+          label = "No"
+        }
+      }
+      order = [
+        salesforce.Account.field.Elad__c.valueSet.values.Yes,
+        salesforce.Account.field.Elad__c.valueSet.values.No,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
   salesforce.Number NumberofLocations__c {
     apiName = "Account.NumberofLocations__c"
     externalId = false
