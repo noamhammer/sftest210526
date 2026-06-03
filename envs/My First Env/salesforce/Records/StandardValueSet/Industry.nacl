@@ -1,6 +1,6 @@
 salesforce.StandardValueSet Industry {
   fullName = "Industry"
-  sorted = false
+  sorted = true
   standardValue = {
     values = {
       Agriculture = {
