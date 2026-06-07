@@ -181,4 +181,12 @@ type salesforce.Account {
     length = 32768
     visibleLines = 5
   }
+  salesforce.Text AgentTestField__c {
+    apiName = "Account.AgentTestField__c"
+    externalId = false
+    label = "Agent Test Field"
+    length = 255
+    unique = false
+    caseSensitive = false
+  }
 }
