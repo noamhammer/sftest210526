@@ -181,4 +181,12 @@ type salesforce.Account {
     length = 32768
     visibleLines = 5
   }
+  salesforce.Text AccountHealthScore__c {
+    apiName = "Account.AccountHealthScore__c"
+    externalId = false
+    label = "Account Health Score"
+    length = 50
+    unique = false
+    caseSensitive = false
+  }
 }
