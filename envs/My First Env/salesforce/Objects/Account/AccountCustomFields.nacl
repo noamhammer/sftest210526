@@ -181,4 +181,12 @@ type salesforce.Account {
     length = 32768
     visibleLines = 5
   }
+  salesforce.Text SaltoTest__c {
+    apiName = "Account.SaltoTest__c"
+    externalId = false
+    label = "Salto Test"
+    length = 255
+    unique = false
+    caseSensitive = false
+  }
 }
