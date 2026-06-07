@@ -79,6 +79,14 @@ type salesforce.Account {
     unique = false
     caseSensitive = false
   }
+  salesforce.Text SaltoDemoNote__c {
+    apiName = "Account.SaltoDemoNote__c"
+    externalId = false
+    label = "Salto Demo Note"
+    length = 255
+    unique = false
+    caseSensitive = false
+  }
   salesforce.Picklist SLA__c {
     apiName = "Account.SLA__c"
     label = "SLA"
