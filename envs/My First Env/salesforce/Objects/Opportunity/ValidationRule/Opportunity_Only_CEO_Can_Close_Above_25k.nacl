@@ -1,0 +1,10 @@
+salesforce.ValidationRule Opportunity_Only_CEO_Can_Close_Above_25k {
+  active = true
+  errorConditionFormula = "AND(ISPICKVAL(StageName, \"Closed Won\"), Amount >= 25000, $UserRole.Name <> \"CEO\")"
+  errorMessage = "Only a user with the CEO role can move an Opportunity of $25,000 or more to Closed Won."
+  fullName = "Opportunity.Only_CEO_Can_Close_Above_25k"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Only_CEO_Can_Close_Above_25k"
+}

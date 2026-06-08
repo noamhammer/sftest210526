@@ -1,0 +1,10 @@
+salesforce.ValidationRule Opportunity_Requires_CEO_Approval_Above_25k {
+  active = true
+  errorConditionFormula = "AND(ISPICKVAL(StageName, \"Closed Won\"), Amount >= 25000, NOT(Approved_by_CEO__c))"
+  errorMessage = "Opportunities of $25,000 or more must be approved by the CEO before they can be set to Closed Won."
+  fullName = "Opportunity.Requires_CEO_Approval_Above_25k"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Requires_CEO_Approval_Above_25k"
+}

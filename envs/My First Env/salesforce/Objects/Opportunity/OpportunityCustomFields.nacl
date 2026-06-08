@@ -66,4 +66,10 @@ type salesforce.Opportunity {
     unique = false
     caseSensitive = false
   }
+  salesforce.Checkbox Approved_by_CEO__c {
+    apiName = "Opportunity.Approved_by_CEO__c"
+    label = "Approved by CEO"
+    defaultValue = "false"
+    trackTrending = false
+  }
 }
