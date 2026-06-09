@@ -29,6 +29,36 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
+  salesforce.Picklist Color__c {
+    apiName = "Account.Color__c"
+    label = "Color"
+    valueSet = {
+      values = {
+        Red = {
+          fullName = "Red"
+          default = false
+          label = "Red"
+        }
+        Green = {
+          fullName = "Green"
+          default = false
+          label = "Green"
+        }
+        Blue = {
+          fullName = "Blue"
+          default = false
+          label = "Blue"
+        }
+      }
+      order = [
+        salesforce.Account.field.Color__c.valueSet.values.Red,
+        salesforce.Account.field.Color__c.valueSet.values.Green,
+        salesforce.Account.field.Color__c.valueSet.values.Blue,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
   salesforce.Picklist CustomerPriority__c {
     apiName = "Account.CustomerPriority__c"
     label = "Priority"
