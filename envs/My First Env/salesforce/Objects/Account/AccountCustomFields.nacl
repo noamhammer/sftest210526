@@ -175,6 +175,30 @@ type salesforce.Account {
     sorted = false
     restricted = false
   }
+  salesforce.Picklist Green__c {
+    apiName = "Account.Green__c"
+    label = "Green?"
+    valueSet = {
+      values = {
+        Yes = {
+          fullName = "Yes"
+          default = false
+          label = "Yes"
+        }
+        No = {
+          fullName = "No"
+          default = false
+          label = "No"
+        }
+      }
+      order = [
+        salesforce.Account.field.Green__c.valueSet.values.Yes,
+        salesforce.Account.field.Green__c.valueSet.values.No,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
   salesforce.LongTextArea Notes__c {
     apiName = "Account.Notes__c"
     label = "Notes"
