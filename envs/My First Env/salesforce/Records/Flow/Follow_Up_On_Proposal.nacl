@@ -7,14 +7,15 @@ salesforce.Flow Follow_Up_On_Proposal {
   runInMode = "DefaultMode"
   interviewLabel = "Follow Up On Proposal {!$Flow.CurrentDateTime}"
   start = {
-    object = "Opportunity"
+    object = salesforce.Opportunity
     triggerType = "RecordAfterSave"
     recordTriggerType = "Update"
-    filterLogic = "and"
     filterFormula = "AND(ISCHANGED({!$Record.StageName}), ISPICKVAL({!$Record.StageName}, \"Proposal/Price Quote\"), {!$Record.Amount} > 10000)"
     connector = {
       targetReference = "Create_Follow_Up_Task"
     }
+    locationX = 0
+    locationY = 0
   }
   recordCreates = [
     {
@@ -22,58 +23,67 @@ salesforce.Flow Follow_Up_On_Proposal {
       label = "Create Follow Up Task"
       locationX = 176
       locationY = 288
-      object = "Task"
+      object = salesforce.Task
       storeOutputAutomatically = true
       inputAssignments = [
         {
-          field = "OwnerId"
-          value = {
-            elementReference = "$Record.OwnerId"
-          }
-        },
-        {
-          field = "WhatId"
-          value = {
-            elementReference = "$Record.Id"
-          }
-        },
-        {
-          field = "Subject"
-          value = {
-            elementReference = "Task_Subject"
-          }
-        },
-        {
-          field = "ActivityDate"
+          field = salesforce.Task.field.ActivityDate
           value = {
             elementReference = "Due_Date"
           }
         },
         {
-          field = "Status"
+          field = salesforce.Task.field.OwnerId
+          value = {
+            elementReference = salesforce.Task.field.OwnerId
+          }
+        },
+        {
+          field = salesforce.Task.field.Priority
+          value = {
+            stringValue = "Normal"
+          }
+        },
+        {
+          field = salesforce.Task.field.Status
           value = {
             stringValue = "Not Started"
           }
         },
         {
-          field = "Priority"
+          field = salesforce.Task.field.Subject
           value = {
-            stringValue = "Normal"
+            elementReference = "Task_Subject"
+          }
+        },
+        {
+          field = salesforce.Task.field.WhatId
+          value = {
+            elementReference = salesforce.Task.field.Id
           }
         },
       ]
     },
   ]
+  areMetricsLoggedToDataCloud = false
   formulas = [
+    {
+      name = "Due_Date"
+      dataType = "Date"
+      expression = "TODAY() + 7"
+    },
     {
       name = "Task_Subject"
       dataType = "String"
       expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
     },
+  ]
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
     {
-      name = "Due_Date"
-      dataType = "Date"
-      expression = "TODAY() + 7"
+      reference = salesforce.Project__c
     },
   ]
   _alias = "Follow Up On Proposal"
