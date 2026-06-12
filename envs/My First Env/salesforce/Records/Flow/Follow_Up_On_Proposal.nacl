@@ -1,0 +1,80 @@
+salesforce.Flow Follow_Up_On_Proposal {
+  fullName = "Follow_Up_On_Proposal"
+  apiVersion = 61
+  label = "Follow Up On Proposal"
+  status = "Draft"
+  processType = "AutoLaunchedFlow"
+  runInMode = "DefaultMode"
+  interviewLabel = "Follow Up On Proposal {!$Flow.CurrentDateTime}"
+  start = {
+    object = "Opportunity"
+    triggerType = "RecordAfterSave"
+    recordTriggerType = "Update"
+    filterLogic = "and"
+    filterFormula = "AND(ISCHANGED({!$Record.StageName}), ISPICKVAL({!$Record.StageName}, \"Proposal/Price Quote\"), {!$Record.Amount} > 10000)"
+    connector = {
+      targetReference = "Create_Follow_Up_Task"
+    }
+  }
+  recordCreates = [
+    {
+      name = "Create_Follow_Up_Task"
+      label = "Create Follow Up Task"
+      locationX = 176
+      locationY = 288
+      object = "Task"
+      storeOutputAutomatically = true
+      inputAssignments = [
+        {
+          field = "OwnerId"
+          value = {
+            elementReference = "$Record.OwnerId"
+          }
+        },
+        {
+          field = "WhatId"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          field = "Subject"
+          value = {
+            elementReference = "Task_Subject"
+          }
+        },
+        {
+          field = "ActivityDate"
+          value = {
+            elementReference = "Due_Date"
+          }
+        },
+        {
+          field = "Status"
+          value = {
+            stringValue = "Not Started"
+          }
+        },
+        {
+          field = "Priority"
+          value = {
+            stringValue = "Normal"
+          }
+        },
+      ]
+    },
+  ]
+  formulas = [
+    {
+      name = "Task_Subject"
+      dataType = "String"
+      expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
+    },
+    {
+      name = "Due_Date"
+      dataType = "Date"
+      expression = "TODAY() + 7"
+    },
+  ]
+  _alias = "Follow Up On Proposal"
+}
