@@ -24,6 +24,11 @@ type salesforce.Opportunity {
           default = false
           label = "Yet to begin"
         }
+        On_hold@s = {
+          fullName = "On hold"
+          default = false
+          label = "On hold"
+        }
         Completed = {
           fullName = "Completed"
           default = false
@@ -33,6 +38,7 @@ type salesforce.Opportunity {
       order = [
         salesforce.Opportunity.field.DeliveryInstallationStatus__c.valueSet.values.In_progress@s,
         salesforce.Opportunity.field.DeliveryInstallationStatus__c.valueSet.values.Yet_to_begin@s,
+        salesforce.Opportunity.field.DeliveryInstallationStatus__c.valueSet.values.On_hold@s,
         salesforce.Opportunity.field.DeliveryInstallationStatus__c.valueSet.values.Completed,
       ]
     }
