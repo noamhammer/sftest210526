@@ -49,11 +49,17 @@ type salesforce.Account {
           default = false
           label = "Blue"
         }
+        Yellow = {
+          fullName = "Yellow"
+          default = false
+          label = "Yellow"
+        }
       }
       order = [
         salesforce.Account.field.Color__c.valueSet.values.Red,
         salesforce.Account.field.Color__c.valueSet.values.Green,
         salesforce.Account.field.Color__c.valueSet.values.Blue,
+        salesforce.Account.field.Color__c.valueSet.values.Yellow,
       ]
     }
     sorted = false
