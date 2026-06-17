@@ -2,10 +2,7 @@ salesforce.EinsteinAISettings {
   enableAIFeedbackWithDC = false
   enableAITrustInputToxicityDetection = false
   enableAITrustPromptInjectionDetection = false
-  enableAgentHealthMonitoring = false
   enableAgentHealthMonitoringGA = false
-  enablePBHideScopedNotif = false
-  enablePBPromptPerformanceMetrics = false
   enableTrustPIIMasking = false
   fullName = "EinsteinAI"
   _alias = "EinsteinAI"

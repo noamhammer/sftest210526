@@ -1,7 +1,0 @@
-salesforce.SharingRules DataKnowledgeRsrch {
-  fullName = "DataKnowledgeRsrch"
-  _parent = [
-    salesforce.DataKnowledgeRsrch,
-  ]
-  _alias = "DataKnowledgeRsrch"
-}
