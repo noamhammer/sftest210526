@@ -1,0 +1,149 @@
+salesforce.Flow Follow_Up_On_High_Value_Proposal {
+  fullName = "Follow_Up_On_High_Value_Proposal"
+  apiVersion = 61
+  label = "Follow Up On High Value Proposal"
+  status = "Active"
+  processType = "AutoLaunchedFlow"
+  runInMode = "DefaultMode"
+  interviewLabel = "Follow Up On High Value Proposal {!$Flow.CurrentDateTime}"
+  start = {
+    object = salesforce.Opportunity
+    triggerType = "RecordAfterSave"
+    recordTriggerType = "Update"
+    filterFormula = "AND(ISCHANGED({!$Record.StageName}), ISPICKVAL({!$Record.StageName}, \"Proposal/Price Quote\"), {!$Record.Amount} > 25000)"
+    connector = {
+      targetReference = "Create_Follow_Up_Task"
+    }
+    locationX = 0
+    locationY = 0
+  }
+  recordCreates = [
+    {
+      name = "Create_Follow_Up_Task"
+      label = "Create Follow Up Task"
+      locationX = 176
+      locationY = 288
+      object = salesforce.Task
+      storeOutputAutomatically = true
+      connector = {
+        targetReference = "Create_Reminder_Task"
+      }
+      inputAssignments = [
+        {
+          field = salesforce.Task.field.ActivityDate
+          value = {
+            elementReference = "Due_Date"
+          }
+        },
+        {
+          field = salesforce.Task.field.OwnerId
+          value = {
+            elementReference = salesforce.Task.field.OwnerId
+          }
+        },
+        {
+          field = salesforce.Task.field.Priority
+          value = {
+            stringValue = "Normal"
+          }
+        },
+        {
+          field = salesforce.Task.field.Status
+          value = {
+            stringValue = "Not Started"
+          }
+        },
+        {
+          field = salesforce.Task.field.Subject
+          value = {
+            elementReference = "Task_Subject"
+          }
+        },
+        {
+          field = salesforce.Task.field.WhatId
+          value = {
+            elementReference = salesforce.Task.field.Id
+          }
+        },
+      ]
+    },
+    {
+      name = "Create_Reminder_Task"
+      label = "Create Reminder Task"
+      locationX = 176
+      locationY = 432
+      object = salesforce.Task
+      storeOutputAutomatically = true
+      inputAssignments = [
+        {
+          field = salesforce.Task.field.ActivityDate
+          value = {
+            elementReference = "Reminder_Date"
+          }
+        },
+        {
+          field = salesforce.Task.field.OwnerId
+          value = {
+            elementReference = salesforce.Task.field.OwnerId
+          }
+        },
+        {
+          field = salesforce.Task.field.Priority
+          value = {
+            stringValue = "Normal"
+          }
+        },
+        {
+          field = salesforce.Task.field.Status
+          value = {
+            stringValue = "Not Started"
+          }
+        },
+        {
+          field = salesforce.Task.field.Subject
+          value = {
+            elementReference = "Reminder_Subject"
+          }
+        },
+        {
+          field = salesforce.Task.field.WhatId
+          value = {
+            elementReference = salesforce.Task.field.Id
+          }
+        },
+      ]
+    },
+  ]
+  areMetricsLoggedToDataCloud = false
+  formulas = [
+    {
+      name = "Due_Date"
+      dataType = "Date"
+      expression = "TODAY() + 10"
+    },
+    {
+      name = "Reminder_Date"
+      dataType = "Date"
+      expression = "TODAY() + 21"
+    },
+    {
+      name = "Reminder_Subject"
+      dataType = "String"
+      expression = "\"Reminder: Follow up on Proposal - \" & {!$Record.Name}"
+    },
+    {
+      name = "Task_Subject"
+      dataType = "String"
+      expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
+    },
+  ]
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Project__c
+    },
+  ]
+  _alias = "Follow Up On High Value Proposal"
+}
