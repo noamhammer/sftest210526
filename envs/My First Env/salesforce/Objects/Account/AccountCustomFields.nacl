@@ -241,4 +241,12 @@ type salesforce.Account {
     length = 32768
     visibleLines = 5
   }
+  salesforce.Number BoomBoom__c {
+    apiName = "Account.BoomBoom__c"
+    externalId = false
+    label = "BoomBoom"
+    precision = 18
+    scale = 0
+    unique = false
+  }
 }
