@@ -241,4 +241,34 @@ type salesforce.Account {
     length = 32768
     visibleLines = 5
   }
+  salesforce.Picklist Test123__c {
+    apiName = "Account.Test123__c"
+    label = "Test123"
+    valueSet = {
+      values = {
+        Red = {
+          fullName = "Red"
+          default = false
+          label = "Red"
+        }
+        Green = {
+          fullName = "Green"
+          default = false
+          label = "Green"
+        }
+        Blue = {
+          fullName = "Blue"
+          default = false
+          label = "Blue"
+        }
+      }
+      order = [
+        salesforce.Account.field.Test123__c.valueSet.values.Red,
+        salesforce.Account.field.Test123__c.valueSet.values.Green,
+        salesforce.Account.field.Test123__c.valueSet.values.Blue,
+      ]
+    }
+    sorted = false
+    restricted = false
+  }
 }
