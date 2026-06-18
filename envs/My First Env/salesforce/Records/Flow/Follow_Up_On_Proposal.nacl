@@ -127,14 +127,14 @@ salesforce.Flow Follow_Up_On_Proposal {
       expression = "TODAY() + 14"
     },
     {
-      name = "Task_Subject"
-      dataType = "String"
-      expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
-    },
-    {
       name = "Reminder_Subject"
       dataType = "String"
       expression = "\"Reminder: Follow up on Proposal - \" & {!$Record.Name}"
+    },
+    {
+      name = "Task_Subject"
+      dataType = "String"
+      expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
     },
   ]
   _parent = [
