@@ -25,6 +25,9 @@ salesforce.Flow Follow_Up_On_Proposal {
       locationY = 288
       object = salesforce.Task
       storeOutputAutomatically = true
+      connector = {
+        targetReference = "Create_Reminder_Task"
+      }
       inputAssignments = [
         {
           field = salesforce.Task.field.ActivityDate
@@ -64,6 +67,52 @@ salesforce.Flow Follow_Up_On_Proposal {
         },
       ]
     },
+    {
+      name = "Create_Reminder_Task"
+      label = "Create Reminder Task"
+      locationX = 176
+      locationY = 432
+      object = salesforce.Task
+      storeOutputAutomatically = true
+      inputAssignments = [
+        {
+          field = salesforce.Task.field.ActivityDate
+          value = {
+            elementReference = "Reminder_Date"
+          }
+        },
+        {
+          field = salesforce.Task.field.OwnerId
+          value = {
+            elementReference = salesforce.Task.field.OwnerId
+          }
+        },
+        {
+          field = salesforce.Task.field.Priority
+          value = {
+            stringValue = "Normal"
+          }
+        },
+        {
+          field = salesforce.Task.field.Status
+          value = {
+            stringValue = "Not Started"
+          }
+        },
+        {
+          field = salesforce.Task.field.Subject
+          value = {
+            elementReference = "Reminder_Subject"
+          }
+        },
+        {
+          field = salesforce.Task.field.WhatId
+          value = {
+            elementReference = salesforce.Task.field.Id
+          }
+        },
+      ]
+    },
   ]
   areMetricsLoggedToDataCloud = false
   formulas = [
@@ -73,9 +122,19 @@ salesforce.Flow Follow_Up_On_Proposal {
       expression = "TODAY() + 7"
     },
     {
+      name = "Reminder_Date"
+      dataType = "Date"
+      expression = "TODAY() + 14"
+    },
+    {
       name = "Task_Subject"
       dataType = "String"
       expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
+    },
+    {
+      name = "Reminder_Subject"
+      dataType = "String"
+      expression = "\"Reminder: Follow up on Proposal - \" & {!$Record.Name}"
     },
   ]
   _parent = [
