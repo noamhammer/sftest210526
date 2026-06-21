@@ -134,7 +134,7 @@ salesforce.Flow Follow_Up_On_Proposal {
     {
       name = "Task_Subject"
       dataType = "String"
-      expression = "\"Follow up on Proposal - \" & {!$Record.Name}"
+      expression = "\"✨ Follow up on Proposal - \" & {!$Record.Name}"
     },
   ]
   _parent = [
